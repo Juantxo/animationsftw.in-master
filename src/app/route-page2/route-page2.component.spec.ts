@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { RoutePage2Component } from './route-page2.component';
 
@@ -6,7 +6,7 @@ describe('RoutePage2Component', () => {
   let component: RoutePage2Component;
   let fixture: ComponentFixture<RoutePage2Component>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RoutePage2Component ]
     })

@@ -66,7 +66,7 @@ import { ResourcesPageComponent } from './resources-page/resources-page.componen
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' })
   ],
   providers: [
     CodeExampleService,
