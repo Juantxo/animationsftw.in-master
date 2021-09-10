@@ -28,7 +28,7 @@ const PAGE_ANIMATIONS = [
 export class BuilderPageComponent {
   position = 0;
 
-  @ViewChild('scrubber')
+  @ViewChild('scrubber', { static: true })
   public scrubber: PhotoScrubberComponent;
 
   @HostBinding('@pageAnimations')

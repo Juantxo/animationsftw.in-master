@@ -55,10 +55,10 @@ export class AppComponent {
   @HostBinding('@.disabled')
   animationsDisabled = false;
 
-  @ViewChild('tooltip')
+  @ViewChild('tooltip', { static: true })
   public tooltip: ToolTipComponent;
 
-  @ViewChild('modal')
+  @ViewChild('modal', { static: true })
   public modal: ModalComponent;
 
   // this will be true once all the photos are preloaded

@@ -38,7 +38,7 @@ function resolveLanguageFromFileName(fileName: string) {
 export class CodeSnippetComponent implements OnInit {
   public classes: string = '';
 
-  @ViewChild('code')
+  @ViewChild('code', { static: true })
   public codeContainer;
 
   @Input('src')
