@@ -1,5 +1,5 @@
 import { HostBinding, Input, ViewChild, Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as Prism from 'prismjs';
 
 const DEFAULT_LANGUAGE = 'javascript';
@@ -55,9 +55,10 @@ export class CodeSnippetComponent implements OnInit {
     let src = this.src;
     this.status = 'loading';
     if (src) {
-      this._http.get(src).toPromise().then(response => {
+      this._http.get(src, { responseType: "text" }).toPromise().then(response => {
+
         const language = resolveLanguageFromFileName(src);
-        this._updateContent(response.text(), language);
+        this._updateContent(response, language);
       }).catch(e => {
         this.status = 'error';
       });
