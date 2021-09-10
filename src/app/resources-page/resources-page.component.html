@@ -1,0 +1,55 @@
+<div class="resources">
+  <div class="cell" [@gridCell]="isSectionActive(sections.resources)" (mouseover)="section=sections.resources">
+    <img src="/assets/angular.svg" *ngIf="!isSectionActive(sections.resources)" class="avatar" />
+    <img src="/assets/angular-focus.png" *ngIf="isSectionActive(sections.resources)" class="avatar" />
+
+    <div class="content">
+      <h2 class="heading">Learn More</h2>
+      <div class="inner" *ngIf="section == sections.resources">
+        <div class="item bullet-point">
+          <a href="https://github.com/matsko/AnimationMovieWebsite" target="_blank" rel="nofollow">github project</a>
+        </div>
+        <div class="item bullet-point">
+          <a href="https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html" target="_blank" rel="nofollow">yearofmoo.com - Animations in Angular 4.2+</a>
+        </div>
+        <div class="item bullet-point">
+          <a href="http://www.angular.io" target="_blank" rel="nofollow">angular.io</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell" [@gridCell]="isSectionActive(sections.lukas)" (mouseover)="section=sections.lukas">
+    <img src="/assets/lukas.jpg" *ngIf="!isSectionActive(sections.lukas)" class="avatar" />
+    <img src="/assets/lukas-sky.jpg" class="avatar" *ngIf="isSectionActive(sections.lukas)" />
+
+    <div class="content">
+      <h2 class="heading">Contact Lukas</h2>
+      <div class="inner" *ngIf="section == sections.lukas">
+        <div class="item bullet-point">
+          <a href="https://twitter.com/simpulton" target="_blank" rel="nofollow">@simpulton</a>
+        </div>
+        <div class="item bullet-point">
+          <a href="http://onehungrymind.com/" target="_blank" rel="nofollow">www.onehungrymind.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell" [@gridCell]="isSectionActive(sections.matias)" (mouseover)="section=sections.matias">
+    <img src="/assets/matias.jpg" *ngIf="!isSectionActive(sections.matias)" class="avatar" />
+    <img src="/assets/matias-sky.jpg" class="avatar" *ngIf="isSectionActive(sections.matias)" />
+
+    <div class="content">
+      <h2 class="heading">Contact Matias</h2>
+      <div class="inner" *ngIf="section == sections.matias">
+        <div class="item bullet-point">
+          <a href="https://twitter.com/yearofmoo" target="_blank" rel="nofollow">@yearofmoo</a>
+        </div>
+        <div class="item bullet-point">
+          <a href="http://www.yearofmoo.com" target="_blank" rel="nofollow">www.yearofmoo.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

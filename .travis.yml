@@ -1,0 +1,27 @@
+language: "node_js"
+node_js:
+  - 14
+
+os:
+- linux
+
+install:
+  - yarn install
+
+before_deploy:
+  - yarn build --output-path=/tmp/dist
+
+deploy:
+  provider: s3
+  on:
+    branch: master
+  access_key_id: $AWS_S3_KEY
+  secret_access_key: $AWS_S3_SECRET_KEY
+  bucket: $AWS_S3_BUCKET
+  region: $AWS_S3_REGION
+  acl: public_read
+  local_dir: /tmp/dist
+  skip_cleanup: true
+
+after_deploy:
+  - bash travis-update-cloudflare.sh
