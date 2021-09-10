@@ -4,8 +4,8 @@ import { trigger, group, sequence, transition, state, style, animate, query, sta
 import { AnimationCountService } from '../animation-count.service';
 
 const PAGE_ANIMATIONS = [
-  {title: 'Page Animation', fileName: '/assets/code/builder-page-animations.example-ts'},
-  {title: 'Photo List Animation', fileName: '/assets/code/builder-page-list-animation.example-ts'}
+  { title: 'Page Animation', fileName: '/assets/code/builder-page-animations.example-ts' },
+  { title: 'Photo List Animation', fileName: '/assets/code/builder-page-list-animation.example-ts' }
 ];
 
 @Component({
@@ -28,8 +28,7 @@ const PAGE_ANIMATIONS = [
 export class BuilderPageComponent {
   position = 0;
 
-  @ViewChild('scrubber', { static: true })
-  public scrubber: PhotoScrubberComponent;
+  @ViewChild('scrubber', { static: true }) scrubber: PhotoScrubberComponent;
 
   @HostBinding('@pageAnimations')
   public animatePage = true;

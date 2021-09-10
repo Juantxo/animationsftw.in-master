@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, ViewChild, Component, HostBinding } from '@angular/core';
+import { ChangeDetectorRef, ViewChild, Component, HostBinding, ElementRef } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart } from '@angular/router';
 import { CodeExampleService } from './code-example.service';
 import { trigger, transition, animate, style, query, group, state, animateChild } from '@angular/animations';
@@ -34,12 +34,12 @@ const ELASTIC_BEZIER = 'cubic-bezier(.26,1.96,.58,.61)';
       transition('* => intro', [
         style({ position: 'relative' }),
         query(':enter, :leave', style({
-          position: 'absolute', top:0, left:0, width: '100%'
+          position: 'absolute', top: 0, left: 0, width: '100%'
         })),
         group([
           query(':enter', [
-            style({ transform: 'translateX(-100px)', opacity:0 }),
-            animate('300ms ease-out', style({ opacity:1, transform: 'none' })),
+            style({ transform: 'translateX(-100px)', opacity: 0 }),
+            animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
             animateChild()
           ]),
         ])
@@ -55,11 +55,11 @@ export class AppComponent {
   @HostBinding('@.disabled')
   animationsDisabled = false;
 
-  @ViewChild('tooltip', { static: true })
-  public tooltip: ToolTipComponent;
+  @ViewChild('tooltip', { static: true }) tooltip: ToolTipComponent;
 
-  @ViewChild('modal', { static: true })
-  public modal: ModalComponent;
+
+  @ViewChild('modal', { static: true }) modal: ModalComponent
+
 
   // this will be true once all the photos are preloaded
   public ready = false;
@@ -71,11 +71,11 @@ export class AppComponent {
     _tooltipService.changes.subscribe((e: ToolTipEvent) => {
       switch (e.action) {
         case 'reposition':
-          const {x,y} = e.data;
-          this.tooltip.position(e.type,e.data.x,e.data.y);
+          const { x, y } = e.data;
+          this.tooltip.position(e.type, e.data.x, e.data.y);
           break;
         case 'show':
-          this.tooltip.position(e.type,e.data.x,e.data.y);
+          this.tooltip.position(e.type, e.data.x, e.data.y);
           this.tooltip.show();
           break;
         case 'hide':
