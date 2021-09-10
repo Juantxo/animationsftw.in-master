@@ -1,7 +1,7 @@
 # AngularAnimationMovie 12
 
 This website is a demo repo for Lukas Ruebbelke's Angular Connect Talk.
-Angular 12 version
+Angular 12 version.
 
 ## Installation / Running the App
 
